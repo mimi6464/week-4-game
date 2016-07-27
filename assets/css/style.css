@@ -1,0 +1,29 @@
+body {
+	background-color: #8BEDF5;
+	margin-right: auto;
+}
+h1 {
+	font-size: 24px;
+	color: #fff;
+	background-color: #9B3020;
+	padding: 30px;	
+}
+.main_content {
+	font-size: 18px;
+	color: #1A8C06;
+	background-color: #E8F5BE;
+	padding: 25px;
+}
+.guess-display {
+	padding: 45px 35px;
+	background-color: #6AD167;
+}
+.win-lose-display {
+	background: #53D1ED;
+}
+.total-score {
+
+}
+.score-board {
+	
+}
