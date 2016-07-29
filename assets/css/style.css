@@ -1,29 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Amaranth:400,700);
+
+
+
 body {
-	background-color: #8BEDF5;
-	margin-right: auto;
+	background-color: #9DD3CE;
+	width: 940px;
 }
-h1 {
-	font-size: 24px;
-	color: #fff;
-	background-color: #9B3020;
-	padding: 30px;	
+
+
+.title-section
+{
+	background:#ff6a00;
+	margin:20px;
+	font-size:24px;
+	padding:40px 10px;
 }
-.main_content {
-	font-size: 18px;
-	color: #1A8C06;
-	background-color: #E8F5BE;
-	padding: 25px;
-}
-.guess-display {
-	padding: 45px 35px;
-	background-color: #6AD167;
-}
-.win-lose-display {
-	background: #53D1ED;
-}
-.total-score {
+#main_content
+{
+		margin:20px;
+	background:#ecf181;
+	color:#1b894c;
+	padding:20px 10px 50px;
 
 }
-.score-board {
+
+
+.guess-display
+{
+	margin-left:20px;
+		vertical-align:top;
+	background:#1b894c;
+	padding:10px 10px 60px;
+	display:inline-block;
+	width:200px;
+	height:40px;
+}
+.win-lose-display
+{
+		margin-left:2px;
+		vertical-align:top;
+	background:#13eec6;
+	padding:10px 10px 60px;
+	display:inline-block;
+	width:100px;
+	height:40px;
 	
+}
+.gem
+{
+	background:#fff;
+	display:inline-block;
+	margin-right:4px;
+	border:1px solid #DDD;
+}
+.gem1{
+	margin-left:20px;
+	margin-top:20px;
+}
+
+.total-score
+{
+	margin-top:20px;
+		margin-left:20px;
+		background:#5188bd;
+		padding:10px;
+			width:200px;
+				color:#FFF;
+				margin-bottom:6px;
+}
+
+.score-board
+{
+	margin-left:20px;
+		vertical-align:top;
+	background:#5188bd;
+	padding:10px 10px 60px;
+	width:200px;
+	height:40px;
+	color:#FFF;
 }

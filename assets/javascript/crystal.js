@@ -1,44 +1,81 @@
-<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+$(document).ready(function () {
 
 
+	var totalPick = 0;
+	var randomPick = 0;
+	var winCount = 0;
+	var lossCount = 0;
+	$('.gem').on("click", function () {
 
-$(document).ready(function(){
+		var self = $(this);
+		var value = self.attr('value');
+		if (value === '0') {
+			var guess = Math.floor(Math.random() * 12) + 1;
+			self.attr("value", guess);
+			addPicks(guess);
+		}
+		//To verify game 
+		isAllClicked();
+
+	});
 
 
-var user;
-var gem = math.floor(Math.random()* 12) + 1;
-var gem1; Math.floor(Math.random()* 12) + 1;
-var gem2; Math.floor(Math.random()* 12) + 1;
-var gem3; Math.floor(Math.random()* 12) + 1;
-var gem4; Math.floor(Math.random()* 12) + 1;
+	function addPicks(value) {
+		totalPick += value;
+		$('.score-board').text(totalPick);
+	};
 
+	function isAllClicked() {
+		var picks = $('.gem');
+		var allHasValue = true;
+		picks.each(function () {
+			var self = $(this);
+			var value = self.attr('value');
 
-var userNumber = 0;
-var randomNumber = Math.floor(Math.random()* 101) + 19;
+			if (value === '0') {
+				allHasValue = false;
+			}
+		});
+		if (allHasValue) {
+			verifyWinner();
+		}
 
+	}
+	function verifyWinner() {
+	
+		var youScore = $('.score-board').text();
+		if (randomPick == youScore) {
+			winCount++;
+			$('#winCount').text(winCount);
+		}
+		else if (youScore > randomPick) {
+			lossCount++;
+			$('#lossCount').text(lossCount);
+		} else {
+			winCount++;
+			$('#winCount').text(winCount);
+		}
 
-})
-$(".gem1").click(function(){
-   	 console.log(gem1);
-   	 return gem1
+		reset();
+		resetAlValue();
+		totalPick = 0;
+	}
+	function resetAlValue() {
+		var picks = $('.gem');		
+		picks.each(function () {
+			var self = $(this);
+			self.attr("value", "0");
+			
+		});		
+	
+	}
+	function reset() {
+		randomPick = Math.floor(Math.random() * 12) + 24;
+		$('.guess-display').text(randomPick);
+		
+	}
+
+	reset();
 });
-$(".gem2").click(function(){
-   	 console.log(gem)2;
-		return gem2
-});
 
-$(".gem3").click(function(){
-   	 console.log(gem3);
-		return gem3
-});
-$(".gem4").click(function(){
-   	 console.log(gem4);
-		return gem4
-});
-if((gem1 + gem2 +gem3+gem4) > randomNumber) {
-	(consol.log('you lose');
-}else if ((gem1 + gem2 +gem3+gem4) == randomNumber) {
-	console.log ('you win');
-}else{
-	consol.log('keep going');
-}
